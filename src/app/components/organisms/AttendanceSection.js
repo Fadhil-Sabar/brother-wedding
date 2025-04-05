@@ -18,16 +18,14 @@ const AttendanceSection = () => {
 			<div className="bg-linear-to-b max-w-2xl from-neutral-600 to-neutral-700 rounded-t-4xl">
 				<div className={`flex flex-col h-[80svh] pt-8 p-5 font-roboto gap-2`}>
 					<div className="flex flex-col snap-y gap-3 overflow-scroll">
-						<Wish />
-						<Wish />
-						<Wish />
-						<Wish />
-						<Wish />
-						<Wish />
-						<Wish />
-						<Wish />
-						<Wish />
-						<Wish />
+						<Wish
+							data={{
+								name: "Nama",
+								message:
+									"Ucapan asdoaisdju oaijsod aoisjd oaosdij aojsodj asjdoajso djiajsod jaoisjd oajsid",
+								confirm: "Hadir",
+							}}
+						/>
 					</div>
 				</div>
 
@@ -51,13 +49,14 @@ const AttendanceSection = () => {
 	);
 };
 
-const Wish = () => {
+const Wish = ({ data }) => {
 	return (
 		<div className="flex flex-col bg-white snap-start rounded-3xl py-2 px-5 tracking-wider">
-			<span className="text-black text-[0.875em]">Nama</span>
-			<span className="text-black/60 text-[0.875em]">
-				Ucapan asdoaisdju oaijsod aoisjd oaosdij aojsodj asjdoajso djiajsod jaoisjd oajsid
-			</span>
+			<div className="gap-2 flex">
+				<span className="text-black text-[0.875em]">{data.name}</span>
+				<span className="text-black/60 text-[0.875em]">{data.confirm}</span>
+			</div>
+			<span className="text-black/60 text-[0.875em]">{data.message}</span>
 		</div>
 	);
 };
