@@ -14,6 +14,12 @@ const ProfileSection = () => {
 	const refProfile1 = useRef(null);
 	const isVisibleRefProfile1 = useIsVisible(refProfile1);
 
+	const refProfileWoman = useRef(null);
+	const isVisibleRefProfileWoman = useIsVisible(refProfileWoman);
+
+	const refProfileMan = useRef(null);
+	const isVisibleRefProfileMan = useIsVisible(refProfileMan);
+
 	return (
 		<div className="flex flex-col items-center min-h-screen bg-white p-5">
 			<div className="flex justify-center">
@@ -30,7 +36,7 @@ const ProfileSection = () => {
 				<span
 					className={`text-gray-700 text-right tracking-wider font-bold text-[0.9735em] 
 						transition-all duration-2000 ${
-							isVisibleRefWord ? "opacity-100 delay-300" : "-translate-y-full opacity-0"
+							isVisibleRefWord ? "opacity-100 delay-250" : "-translate-y-full opacity-0"
 						}`}
 					ref={refWord}
 				>
@@ -69,6 +75,10 @@ const ProfileSection = () => {
 				parentName="Putra Kedua dari Bapak Ahmad Junaedi & Ibu Rina Lisnengsih"
 				instagramLink="https://www.instagram.com/anggrndhsr"
 				imageSrc="/images/profile3.png"
+				className={`transition-all duration-2000 ${
+					isVisibleRefProfileWoman ? "opacity-100" : "-translate-y-full opacity-0"
+				}`}
+				ref={refProfileWoman}
 			/>
 
 			<ProfileInfo
@@ -77,6 +87,10 @@ const ProfileSection = () => {
 				parentName="Putra Pertama dari Bapak Sudarmanto & Ibu Endri Waluyasari"
 				instagramLink="https://www.instagram.com/nakagawa_iruka"
 				imageSrc="/images/profile2.png"
+				className={`transition-all duration-2000 ${
+					isVisibleRefProfileMan ? "opacity-100" : "translate-y-full opacity-0"
+				}`}
+				ref={refProfileMan}
 			/>
 		</div>
 	);

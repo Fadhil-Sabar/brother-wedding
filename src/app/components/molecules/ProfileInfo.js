@@ -8,9 +8,11 @@ const ProfileInfo = ({
 	parentName = "",
 	instagramLink = "",
 	imageSrc = "",
+	className = "",
+	...props
 }) => {
 	return (
-		<div className="flex flex-col items-center mt-20">
+		<div className={`flex flex-col items-center mt-20 ${className}`} {...props}>
 			<Image
 				src={imageSrc}
 				alt="Profile image"

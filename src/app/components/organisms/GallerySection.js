@@ -1,10 +1,12 @@
 import { luxiaDisplay } from "@/app/utils/customFonts";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useRef } from "react";
+import useIsVisible from "@/app/utils/useIsVisible";
 
 const GallerySection = () => {
 	const [selectedImage, setSelectedImage] = useState(null);
-	const [visibleImages, setVisibleImages] = useState([]);
+	const refImage = useRef(null);
+	const isVisibleRefImage = useIsVisible(refImage);
 
 	const galleryData = [
 		{ id: 1, src: "/images/gallery1.jpg", alt: "Wedding photo 1", aspectRatio: "portrait" },
@@ -15,33 +17,22 @@ const GallerySection = () => {
 		// Add all your gallery images here
 	];
 
-	// Gradually reveal images for a nice loading effect
-	useEffect(() => {
-		const showImagesWithDelay = () => {
-			galleryData.forEach((image, index) => {
-				setTimeout(() => {
-					setVisibleImages((prev) => [...prev, image.id]);
-				}, index * 100); // 100ms delay between each image
-			});
-		};
-
-		showImagesWithDelay();
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
-
 	return (
 		<div className="flex flex-col items-center text-center text-[16px] w-full min-h-[80svh] bg-neutral-50 py-12 px-4 md:px-8">
 			<h2 className={`${luxiaDisplay.className} text-[2.125em] text-neutral-900 mb-8`}>Gallery</h2>
 
-			<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 w-full max-w-6xl auto-rows-[minmax(150px,auto)]">
+			<div
+				className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 w-full max-w-6xl auto-rows-[minmax(150px,auto)]"
+				ref={refImage}
+			>
 				{galleryData.map((image) => (
 					<div
 						key={image.id}
 						className={`overflow-hidden rounded-lg shadow-lg cursor-pointer transition-all duration-500
                         ${image.aspectRatio === "portrait" ? "row-span-2" : ""}
                         ${
-													visibleImages.includes(image.id)
-														? "opacity-100 transform-none"
+													isVisibleRefImage
+														? `opacity-100 transform-none delay-${250 * image.id}`
 														: "opacity-0 translate-y-8"
 												}
 						`}

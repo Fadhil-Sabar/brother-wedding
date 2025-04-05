@@ -5,14 +5,16 @@ export default function useIsVisible(ref) {
 
 	useEffect(() => {
 		const observer = new IntersectionObserver(([entry]) => {
+			// if (!isIntersecting) {
 			setIntersecting(entry.isIntersecting);
+			// }
 		});
 
 		observer.observe(ref.current);
 		return () => {
 			observer.disconnect();
 		};
-	}, [ref]);
+	}, [isIntersecting, ref]);
 
 	return isIntersecting;
 }
