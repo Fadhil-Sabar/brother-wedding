@@ -4,8 +4,16 @@
 import Image from "next/image";
 import ProfileInfo from "../molecules/ProfileInfo";
 import { futura } from "../../utils/customFonts";
+import { useRef } from "react";
+import useIsVisible from "@/app/utils/useIsVisible";
 
 const ProfileSection = () => {
+	const refWord = useRef(null);
+	const isVisibleRefWord = useIsVisible(refWord);
+
+	const refProfile1 = useRef(null);
+	const isVisibleRefProfile1 = useIsVisible(refProfile1);
+
 	return (
 		<div className="flex flex-col items-center min-h-screen bg-white p-5">
 			<div className="flex justify-center">
@@ -19,7 +27,13 @@ const ProfileSection = () => {
 			</div>
 
 			<div className={`mt-20 p-5 flex items-end ${futura.className}`}>
-				<span className="text-gray-700 text-right tracking-wider font-bold text-[0.9735em]">
+				<span
+					className={`text-gray-700 text-right tracking-wider font-bold text-[0.9735em] 
+						transition-all duration-2000 ${
+							isVisibleRefWord ? "opacity-100 delay-300" : "-translate-y-full opacity-0"
+						}`}
+					ref={refWord}
+				>
 					"In all the world, there is no heart for me like yours. In all the world, there is no love
 					for you like mine." — Maya Angelou
 				</span>
@@ -32,7 +46,10 @@ const ProfileSection = () => {
 					width={350}
 					height={120}
 					priority
-					className="rounded-2xl drop-shadow-2xl"
+					className={`rounded-2xl drop-shadow-2xl transition-all duration-2000 ${
+						isVisibleRefProfile1 ? "opacity-100 delay-500" : "-translate-y-full opacity-0"
+					}`}
+					ref={refProfile1}
 				/>
 			</div>
 
