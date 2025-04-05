@@ -34,7 +34,7 @@ const ProfileInfo = ({
 			<span
 				className={`${futura.className} text-[0.875em] tracking-wider w-45 text-center font-semibold text-neutral-500 mt-2`}
 			>
-				Anak dari {parentName}
+				{parentName}
 			</span>
 
 			<Image

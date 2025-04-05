@@ -7,6 +7,7 @@ import ProfileSection from "./components/organisms/ProfileSection";
 import CountDownSection from "./components/organisms/CountDownSection";
 import VirtualBlessingSection from "./components/organisms/VirtualBlessingSection";
 import GallerySection from "./components/organisms/GallerySection";
+import AttendanceSection from "./components/organisms/AttendanceSection";
 
 export default function Home() {
 	const [isOpened, setIsOpened] = useState(true);
@@ -26,6 +27,7 @@ export default function Home() {
 					<CountDownSection />
 					<VirtualBlessingSection />
 					<GallerySection />
+					<AttendanceSection />
 				</div>
 			)}
 		</div>
