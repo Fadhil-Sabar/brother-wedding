@@ -10,10 +10,14 @@ const GallerySection = () => {
 
 	const galleryData = [
 		{ id: 1, src: "/images/gallery1.jpg", alt: "Wedding photo 1", aspectRatio: "portrait" },
-		{ id: 2, src: "/images/gallery2.jpg", alt: "Wedding photo 2", aspectRatio: "landscape" },
-		{ id: 3, src: "/images/gallery3.jpg", alt: "Wedding photo 3", aspectRatio: "landscape" },
+		{ id: 2, src: "/images/gallery2.jpg", alt: "Wedding photo 2", aspectRatio: "portrait" },
+		{ id: 3, src: "/images/gallery3.jpg", alt: "Wedding photo 3", aspectRatio: "portrait" },
 		{ id: 4, src: "/images/gallery4.jpg", alt: "Wedding photo 4", aspectRatio: "portrait" },
 		{ id: 5, src: "/images/gallery5.jpg", alt: "Wedding photo 5", aspectRatio: "portrait" },
+		{ id: 6, src: "/images/gallery6.jpg", alt: "Wedding photo 6", aspectRatio: "landscape" },
+		{ id: 7, src: "/images/gallery7.jpg", alt: "Wedding photo 7", aspectRatio: "landscape" },
+		{ id: 8, src: "/images/gallery8.jpg", alt: "Wedding photo 8", aspectRatio: "landscape" },
+		{ id: 9, src: "/images/gallery9.jpg", alt: "Wedding photo 9", aspectRatio: "landscape" },
 		// Add all your gallery images here
 	];
 

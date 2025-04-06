@@ -12,7 +12,7 @@ const ProfileInfo = ({
 	...props
 }) => {
 	return (
-		<div className={`flex flex-col items-center mt-20 ${className}`} {...props}>
+		<div className={`flex flex-col items-center mt-20 ${className}`}>
 			<Image
 				src={imageSrc}
 				alt="Profile image"
@@ -20,6 +20,7 @@ const ProfileInfo = ({
 				height={150}
 				priority
 				className="rounded-full"
+				{...props}
 			/>
 
 			<span
@@ -27,7 +28,9 @@ const ProfileInfo = ({
 			>
 				{shortName}
 			</span>
-			<span className={`${luxiaDisplay.className} text-[1.5em] tracking-wider text-neutral-900`}>
+			<span
+				className={`${luxiaDisplay.className} text-[1.25em] md:text-[1.5em] tracking-wider text-neutral-900`}
+			>
 				{fullName}
 			</span>
 

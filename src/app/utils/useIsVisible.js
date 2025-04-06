@@ -6,7 +6,7 @@ export default function useIsVisible(ref) {
 	useEffect(() => {
 		const observer = new IntersectionObserver(([entry]) => {
 			if (!isIntersecting) {
-			setIntersecting(entry.isIntersecting);
+				setIntersecting(entry.isIntersecting);
 			}
 		});
 

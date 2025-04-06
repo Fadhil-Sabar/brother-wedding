@@ -13,8 +13,9 @@ const yearString = weddingDate.getFullYear();
 
 const CountDownSection = () => {
 	const carouselImages = [
-		"/images/countdowncarousel1.jpg",
-		"/images/carousel2.jpg",
+		// "/images/countdowncarousel1.jpg",
+		// "/images/carousel2.jpg",
+		"/images/countdowncarousel2.png",
 		// Add more images as needed
 	];
 
@@ -28,9 +29,6 @@ const CountDownSection = () => {
 
 	const refAkad = useRef(null);
 	const isVisibleRefAkad = useIsVisible(refAkad);
-
-	const refImageAkad = useRef(null);
-	const isVisibleRefImageAkad = useIsVisible(refImageAkad);
 
 	const refResepsi = useRef(null);
 	const isVisibleRefResepsi = useIsVisible(refResepsi);
@@ -70,7 +68,7 @@ const CountDownSection = () => {
 				<span
 					className={`${
 						bradHefferson.className
-					} text-[2.1875em] mt-10 transition-all duration-1000 ${
+					} text-[2.75em] md:text-[2.8125em] mt-10 transition-all duration-1000 ${
 						isVisibleRefLeading ? `opacity-100` : "-translate-y-full opacity-0"
 					}`}
 					ref={refLeading}
@@ -129,15 +127,15 @@ const CountDownSection = () => {
 						}`}
 						ref={refAkad}
 					>
-						<span className={`${luxiaDisplay.className} text-[2.1875em] tracking-wider `}>
+						<span className={`${bradHefferson.className} text-[2.8125em] tracking-wider `}>
 							Akad Nikah
 						</span>
 
-						<span className={`${futura.className} text-[0.9375em] tracking-widest font-semibold`}>
+						<span className={`${futura.className} text-[0.9375em] tracking-widest font-[1000]`}>
 							{dayString}, {dateString} {monthString} {yearString}
 						</span>
 
-						<span className={`${futura.className} text-[0.9375em] tracking-widest font-semibold`}>
+						<span className={`${futura.className} text-[0.9375em] tracking-widest font-[1000]`}>
 							09.00 s/d 10.00 WIB
 						</span>
 					</div>
@@ -147,11 +145,11 @@ const CountDownSection = () => {
 							isVisibleRefAkad ? "opacity-100" : "translate-x-full opacity-0"
 						}`}
 					>
-						<span className={`${futura.className} text-[0.9375em] tracking-widest font-[1000]`}>
+						<span className={`${futura.className} text-[0.9375em] tracking-widest font-semibold`}>
 							At GOR Balai Rakyat Condet
 						</span>
 
-						<span className={`${futura.className} text-[0.9375em] tracking-widest font-semibold`}>
+						<span className={`${futura.className} text-[0.875em] tracking-widest`}>
 							Gg. Balai Rakyat No.5, RT.5/RW.5, Balekambang, Kec. Kramat jati, Kota Jakarta Timur,
 							Daerah Khusus Ibukota Jakarta 13530, Indonesia
 						</span>
@@ -165,53 +163,31 @@ const CountDownSection = () => {
 						View Location
 					</Button>
 
-					<div className={`flex flex-col gap-5 my-8`} ref={refImageAkad}>
-						<Image
-							src="/images/countdown1.jpg"
-							alt="Image countdown1"
-							width={400}
-							height={400}
-							priority
-							className={`rounded-4xl transition-all duration-1000 ${
-								isVisibleRefImageAkad ? "opacity-100" : "opacity-0 scale-0"
-							}`}
-						/>
-
-						<Image
-							src="/images/countdown2.jpg"
-							alt="Image countdown2"
-							width={400}
-							height={400}
-							priority
-							className={`rounded-4xl transition-all duration-1000 ${
-								isVisibleRefImageAkad ? "opacity-100 delay-250" : "opacity-0 scale-0"
-							}`}
-						/>
-					</div>
-
 					<div
-						className={`flex flex-col transition-all duration-1000 ${
+						className={`flex flex-col transition-all duration-1000 mt-10 ${
 							isVisibleRefResepsi ? "opacity-100 delay-500" : "translate-y-full opacity-0"
 						}`}
 						ref={refResepsi}
 					>
-						<span className={`${luxiaDisplay.className} text-[2.1875em] tracking-wider`}>
+						<span className={`${bradHefferson.className} text-[2.8125em] tracking-wider`}>
 							Resepsi
 						</span>
 
-						<span className={`${futura.className} text-[0.9375em] tracking-widest font-semibold`}>
+						<span className={`${futura.className} text-[0.9375em] tracking-widest font-[1000]`}>
 							{dayString}, {dateString} {monthString} {yearString}
 						</span>
 
-						<span className={`${futura.className} text-[0.9375em] tracking-widest font-semibold`}>
+						<span
+							className={`${futura.className} text-[0.9375em] mb-2 tracking-widest font-[1000]`}
+						>
 							11.00 s/d 14.00 WIB
 						</span>
 
-						<span className={`${futura.className} text-[0.9375em] tracking-widest font-[1000]`}>
+						<span className={`${futura.className} text-[0.9375em] tracking-widest font-semibold`}>
 							At GOR Balai Rakyat Condet
 						</span>
 
-						<span className={`${futura.className} text-[0.9375em] tracking-widest font-semibold`}>
+						<span className={`${futura.className} text-[0.875em] tracking-widest`}>
 							Gg. Balai Rakyat No.5, RT.5/RW.5, Balekambang, Kec. Kramat jati, Kota Jakarta Timur,
 							Daerah Khusus Ibukota Jakarta 13530, Indonesia
 						</span>

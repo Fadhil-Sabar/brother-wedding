@@ -26,7 +26,7 @@ const VirtualBlessingSection = () => {
 	return (
 		<>
 			<div className="w-full h-[400px] flex flex-col items-center justify-center text-center text-[16px] px-8">
-				<span className={`${luxiaDisplay.className} text-[2.1875em] font-bold`}>
+				<span className={`${luxiaDisplay.className} text-[2.1875em] font-[1200]`}>
 					Virtual Blessing
 				</span>
 
@@ -51,8 +51,8 @@ const VirtualBlessingSection = () => {
 				onClick={() => setIsOpenModal(false)}
 			>
 				<div className="flex flex-col items-center justify-center bg-neutral-800 m-3 w-full h-6/12 rounded-lg">
-					<span className={`${luxiaDisplay.className} text-[2.1875em] font-bold`}>
-						Virtual Blessings
+					<span className={`${luxiaDisplay.className} text-[2.1875em] font-[1100]`}>
+						Virtual Blessing
 					</span>
 
 					<div className="flex flex-col items-center">

@@ -36,14 +36,14 @@ const OpeningLayer = ({ onClose, isOpened }) => {
 	return (
 		<div
 			className={
-				"absolute w-full flex flex-col items-center justify-between min-h-screen py-2 text-[16px] bg-[url(/images/opening.webp)] bg-cover bg-center bg-black/50 bg-blend-multiply transform transition-all duration-2000" +
+				"absolute w-full flex flex-col items-center justify-between min-h-screen py-2 text-[16px] bg-[url(/images/opening.jpg)] bg-cover bg-center bg-black/50 bg-blend-multiply transform transition-all duration-2000" +
 				` ${isOpened ? "translate-y-0 opacity-100" : "opacity-0 -translate-y-full "}`
 			}
 		>
-			<div className="w-full h-1/2 flex flex-col items-center justify-center gap-1 mt-10 py-4 transition-all">
+			<div className="w-full h-1/2 flex flex-col items-center justify-center gap-1 mt-18 py-4 transition-all">
 				<AnimatedText
 					text="Dear Invistory,"
-					className="text-[1em] font-roboto tracking-wider text-white/70 delay-50"
+					className="text-[1.125em] font-roboto tracking-wider text-white/70 delay-50"
 					show={showElements.greeting}
 				/>
 				<AnimatedText
@@ -54,7 +54,7 @@ const OpeningLayer = ({ onClose, isOpened }) => {
 				/>
 				<AnimatedText
 					text="The Wedding Celebration of"
-					className="text-[1em] font-roboto tracking-wider text-white/70 delay-450"
+					className="text-[1.125em] font-roboto tracking-wider text-white/70 delay-450"
 					show={showElements.celebration}
 				/>
 				<AnimatedText
