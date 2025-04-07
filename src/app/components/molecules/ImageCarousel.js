@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-const ImageCarousel = ({ images, interval = 7000, children }) => {
+const ImageCarousel = ({ images, interval = 4000, children }) => {
 	const [currentImageIndex, setCurrentImageIndex] = useState(0);
 	const [fadeState, setFadeState] = useState("fade-in");
 

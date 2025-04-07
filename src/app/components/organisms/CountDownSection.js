@@ -149,7 +149,7 @@ const CountDownSection = () => {
 							At GOR Balai Rakyat Condet
 						</span>
 
-						<span className={`${futura.className} text-[0.875em] tracking-widest`}>
+						<span className={`${futura.className} text-[0.875em] tracking-wider`}>
 							Gg. Balai Rakyat No.5, RT.5/RW.5, Balekambang, Kec. Kramat jati, Kota Jakarta Timur,
 							Daerah Khusus Ibukota Jakarta 13530, Indonesia
 						</span>
@@ -187,7 +187,7 @@ const CountDownSection = () => {
 							At GOR Balai Rakyat Condet
 						</span>
 
-						<span className={`${futura.className} text-[0.875em] tracking-widest`}>
+						<span className={`${futura.className} text-[0.875em] tracking-wider`}>
 							Gg. Balai Rakyat No.5, RT.5/RW.5, Balekambang, Kec. Kramat jati, Kota Jakarta Timur,
 							Daerah Khusus Ibukota Jakarta 13530, Indonesia
 						</span>

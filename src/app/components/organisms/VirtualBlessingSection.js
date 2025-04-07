@@ -30,7 +30,7 @@ const VirtualBlessingSection = () => {
 					Virtual Blessing
 				</span>
 
-				<p className={`${futura.className} mt-4 mb-6 text-[0.875em]`}>
+				<p className={`${futura.className} mt-4 mb-6 text-[0.875em] tracking-wider`}>
 					Hopefully this limitation does not reduce happiness for both of us and does not eliminate
 					the blessings from all of you. Your prayer for our marriage is the greatest gift of all.
 				</p>

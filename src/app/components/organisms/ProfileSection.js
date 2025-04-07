@@ -53,7 +53,7 @@ const ProfileSection = () => {
 						width={350}
 						height={120}
 						priority
-						className={`rounded-2xl drop-shadow-2xl transition-all duration-2000 ${
+						className={`rounded-2xl drop-shadow-2xl bg-cover transition-all duration-2000 ${
 							isVisibleRefProfile1 ? "opacity-100 delay-500" : "-translate-y-full opacity-0"
 						}`}
 						ref={refProfile1}
@@ -89,7 +89,7 @@ const ProfileSection = () => {
 				shortName="Anggi"
 				parentName={
 					<>
-						Putra Kedua dari <br /> Bpk. Ahmad Junaedi & <br /> Ibu Rina Lisnengsih
+						Putri Kedua dari <br /> Bpk. Ahmad Junaedi & <br /> Ibu Rina Lisnengsih
 					</>
 				}
 				instagramLink="https://www.instagram.com/anggrndhsr"
