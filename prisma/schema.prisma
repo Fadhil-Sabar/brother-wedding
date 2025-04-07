@@ -1,0 +1,17 @@
+generator client {
+    provider = "prisma-client-js"
+    // output   = "node_modules/.prisma/client"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model wedding {
+    id           Int      @id @default(autoincrement())
+    name         String?  @db.VarChar
+    confirm      String?  @db.VarChar
+    message      String?  @db.VarChar
+    created_date DateTime @default(now()) @db.Timestamp(6)
+}
