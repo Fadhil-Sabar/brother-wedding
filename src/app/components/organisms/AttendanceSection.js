@@ -133,7 +133,7 @@ const AttendanceSection = () => {
 			<div className="bg-linear-to-b max-w-2xl min-w-full md:min-w-2xl from-neutral-600 to-neutral-700 rounded-t-4xl">
 				<div className={`flex flex-col h-[65svh] pt-8 p-5 font-roboto gap-2`}>
 					<div
-						className={`flex flex-col snap-y gap-3 overflow-scroll transition-all duration-500`}
+						className={`flex flex-col snap-y gap-3 overflow-y-scroll transition-all duration-500`}
 						ref={refWishContainer}
 					>
 						{!queryWedding.isLoading &&

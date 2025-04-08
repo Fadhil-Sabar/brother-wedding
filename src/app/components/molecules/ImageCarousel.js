@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState, useEffect } from "react";
 
 const ImageCarousel = ({ images, interval = 4000, children }) => {
@@ -20,12 +21,14 @@ const ImageCarousel = ({ images, interval = 4000, children }) => {
 	}, [images.length, interval]);
 
 	return (
-		<div
-			className="flex flex-col justify-between min-h-screen py-2 text-[16px] bg-cover bg-center transition-all ease-in-out duration-3000 bg-black/50 bg-blend-multiply"
-			style={{ backgroundImage: `url(${images[currentImageIndex]})` }}
-		>
-			{children}
-		</div>
+		<>
+			<div
+				className="flex flex-col justify-between min-h-screen py-2 text-[16px] bg-cover bg-center transition-all ease-in-out duration-3000 bg-black/50 bg-blend-multiply"
+				style={{ backgroundImage: `url(${images[currentImageIndex]})` }}
+			>
+				{children}
+			</div>
+		</>
 	);
 };
 
