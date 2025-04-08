@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, Suspense } from "react";
 
 import OpeningLayer from "./components/organisms/OpeningLayer";
 import GalleryIntroSection from "./components/organisms/GalleryIntroSection";
@@ -17,19 +17,21 @@ export default function Home() {
 	};
 
 	return (
-		<div className="relative w-full">
-			<OpeningLayer onClose={handleClose} isOpened={isOpened} />
+		<Suspense>
+			<div className="relative w-full">
+				<OpeningLayer onClose={handleClose} isOpened={isOpened} />
 
-			{!isOpened && (
-				<div className="">
-					<GalleryIntroSection />
-					<ProfileSection />
-					<CountDownSection />
-					<VirtualBlessingSection />
-					<GallerySection />
-					<AttendanceSection />
-				</div>
-			)}
-		</div>
+				{!isOpened && (
+					<div className="">
+						<GalleryIntroSection />
+						<ProfileSection />
+						<CountDownSection />
+						<VirtualBlessingSection />
+						<GallerySection />
+						<AttendanceSection />
+					</div>
+				)}
+			</div>
+		</Suspense>
 	);
 }
