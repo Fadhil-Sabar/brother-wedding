@@ -18,8 +18,7 @@ export async function GET(request) {
 			headers: { "Content-Type": "application/json" },
 		});
 	} catch (err) {
-		console.log(err.stack, " error stack");
-		return new Response(JSON.stringify({ error: "Failed to fetch data" }), {
+		return new Response(JSON.stringify({ message: "Failed to fetch data" }), {
 			status: 500,
 			headers: { "Content-Type": "application/json" },
 		});
@@ -30,6 +29,26 @@ export async function POST(request) {
 	try {
 		const body = await request.json();
 		const { name, message, confirm } = body;
+
+		const existingWedding = await prisma.wedding.findFirst({
+			where: {
+				name: name,
+			},
+		});
+
+		if (existingWedding) {
+			return new Response(JSON.stringify({ message: "Sudah pernah submit" }), {
+				status: 400,
+				headers: { "Content-Type": "application/json" },
+			});
+		}
+
+		if (!name || !message || !confirm) {
+			return new Response(JSON.stringify({ message: "All fields are required" }), {
+				status: 400,
+				headers: { "Content-Type": "application/json" },
+			});
+		}
 
 		const wedding = await prisma.wedding.create({
 			data: {
@@ -44,8 +63,7 @@ export async function POST(request) {
 			headers: { "Content-Type": "application/json" },
 		});
 	} catch (err) {
-		console.log(err.stack, " error stack");
-		return new Response(JSON.stringify({ error: "Failed to create data" }), {
+		return new Response(JSON.stringify({ message: "Failed to create data" }), {
 			status: 500,
 			headers: { "Content-Type": "application/json" },
 		});

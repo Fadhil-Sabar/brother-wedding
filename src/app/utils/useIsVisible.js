@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 
-export default function useIsVisible(ref) {
+export default function useIsVisible(ref, reIntersecting) {
 	const [isIntersecting, setIntersecting] = useState(false);
 
 	useEffect(() => {
 		const observer = new IntersectionObserver(([entry]) => {
-			if (!isIntersecting) {
+			if (!isIntersecting || reIntersecting) {
 				setIntersecting(entry.isIntersecting);
 			}
 		});
@@ -14,7 +14,7 @@ export default function useIsVisible(ref) {
 		return () => {
 			observer.disconnect();
 		};
-	}, [isIntersecting, ref]);
+	}, [isIntersecting, reIntersecting, ref]);
 
 	return isIntersecting;
 }

@@ -1,32 +1,53 @@
 import { futura, luxiaDisplay } from "@/app/utils/customFonts";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { QueryClient, QueryClientProvider, useMutation, useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { postAttendance } from "@/app/services/api/wedding";
+import { useSearchParams } from "next/navigation";
+import Wish from "../atoms/Wish";
 
 const SubmitStatus = ({ isLoading, isSuccess, isError, error }) => {
-	// if (isLoading) {
-	// return (
-	// 	<div
-	// 		className={`${futura.className} tracking-wider font-semibold flex items-center fixed top-0 right-0 m-5 w-54 h-auto p-2 text-[0.875em] min-h-12 rounded-xl bg-yellow-600`}
-	// 	>
-	// 		Mengirim pesan Anda...
-	// 	</div>
-	// );
-	// }
-	// if (isSuccess) {
-	// 	return <div className="bg-green-600">Terima kasih! Pesan Anda telah terkirim.</div>;
-	// }
-	// if (isError) {
-	// 	return <div className="bg-red-600">Terjadi kesalahan: {error.message}</div>;
-	// }
-	// return null;
+	return (
+		<div>
+			<div
+				className={`${
+					futura.className
+				} z-10 tracking-wider font-semibold flex items-center fixed top-0 right-0 m-5 w-54 h-auto p-2 text-[0.875em] min-h-12 rounded-xl bg-amber-500 transition-all duration-500
+						${isLoading ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full"}
+						`}
+			>
+				Mengirim pesan Anda...
+			</div>
+			<div
+				className={`${
+					futura.className
+				} z-10 tracking-wider font-semibold flex items-center fixed top-0 right-0 m-5 w-54 h-auto p-2 text-[0.875em] min-h-12 rounded-xl bg-green-500 transition-all duration-500
+						${isSuccess ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full"}`}
+			>
+				Terima kasih! Pesan Anda telah terkirim.
+			</div>
+			<div
+				className={`${
+					futura.className
+				} z-10 tracking-wider font-semibold flex items-center fixed top-0 right-0 m-5 w-54 h-auto p-2 text-[0.875em] min-h-12 rounded-xl bg-red-500 transition-all duration-500
+						${isError ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full"}`}
+			>
+				{error?.message}
+			</div>
+		</div>
+	);
 };
 
 const AttendanceSection = () => {
+	const searchParams = useSearchParams();
+	const name = searchParams.get("u");
+	const refWishContainer = useRef(null);
+
+	const [wishList, setWishList] = useState([]);
+
 	const [formAttendance, setFormAttendance] = useState({
-		name: "",
+		name: name || "",
 		message: "",
 		confirm: "",
 	});
@@ -44,6 +65,14 @@ const AttendanceSection = () => {
 		queryFn: async () => {
 			const response = await axios.get(`/api/wedding`);
 
+			if (wishList.length === 0) {
+				setWishList(response.data);
+			} else {
+				if (response.data.length > wishList.length) {
+					setWishList((prev) => [...prev, response.data[response.data.length - 1]]);
+				}
+			}
+
 			return response.data;
 		},
 	});
@@ -53,7 +82,7 @@ const AttendanceSection = () => {
 		onSuccess: () => {
 			queryWedding.refetch();
 			setFormAttendance({
-				name: "",
+				name: name,
 				message: "",
 				confirm: "",
 			});
@@ -63,7 +92,7 @@ const AttendanceSection = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		if (!formAttendance.name || !formAttendance.message || !formAttendance.confirm) {
-			alert("Harap isi semua kolom.");
+			alert("Harap isi pesan dan konfirmasi kehadiran.");
 			return;
 		}
 		mutationSubmit.mutate(formAttendance);
@@ -72,6 +101,15 @@ const AttendanceSection = () => {
 			mutationSubmit.reset();
 		}, 3000);
 	};
+
+	useEffect(() => {
+		if (mutationSubmit.isSuccess && refWishContainer.current) {
+			refWishContainer.current.scrollTo({
+				top: refWishContainer.current.scrollHeight,
+				behavior: "smooth",
+			});
+		}
+	}, [mutationSubmit]);
 
 	return (
 		<div className="flex flex-col min-h-screen items-center bg-white text-black text-[16px] tracking-wide">
@@ -92,11 +130,14 @@ const AttendanceSection = () => {
 			</div>
 			<span className={`text-[1.75em] text-center mb-4 ${luxiaDisplay.className}`}>RSVP</span>
 
-			<div className="bg-linear-to-b max-w-2xl min-w-sm from-neutral-600 to-neutral-700 rounded-t-4xl">
-				<div className={`flex flex-col h-[80svh] pt-8 p-5 font-roboto gap-2`}>
-					<div className="flex flex-col snap-y gap-3 overflow-scroll">
+			<div className="bg-linear-to-b max-w-2xl min-w-full md:min-w-2xl from-neutral-600 to-neutral-700 rounded-t-4xl">
+				<div className={`flex flex-col h-[65svh] pt-8 p-5 font-roboto gap-2`}>
+					<div
+						className={`flex flex-col snap-y gap-3 overflow-scroll transition-all duration-500`}
+						ref={refWishContainer}
+					>
 						{!queryWedding.isLoading &&
-							queryWedding.data.map((wish, index) => (
+							wishList.map((wish, index) => (
 								<Wish
 									key={index}
 									data={{
@@ -104,6 +145,7 @@ const AttendanceSection = () => {
 										message: wish.message,
 										confirm: wish.confirm,
 									}}
+									index={index}
 								/>
 							))}
 					</div>
@@ -115,8 +157,8 @@ const AttendanceSection = () => {
 						placeholder="Nama"
 						className="border px-3 py-2 rounded bg-white"
 						name="name"
-						value={formAttendance.name}
-						onChange={handleInputChange}
+						value={name}
+						disabled
 					/>
 					<textarea
 						placeholder="Ucapan"
@@ -149,20 +191,6 @@ const AttendanceSection = () => {
 					</div>
 				</div>
 			</div>
-		</div>
-	);
-};
-
-const Wish = ({ data }) => {
-	return (
-		<div className="flex flex-col bg-white snap-start rounded-3xl py-2 px-5 tracking-wider">
-			<div className="gap-2 flex">
-				<span className="text-black text-[0.875em]">{data.name}</span>
-				<span className="text-black/60 text-[0.875em]">
-					{data.confirm === "hadir" ? "✅" : "❌"}
-				</span>
-			</div>
-			<span className="text-black/60 text-[0.875em]">{data.message}</span>
 		</div>
 	);
 };

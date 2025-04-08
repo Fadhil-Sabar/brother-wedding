@@ -141,7 +141,7 @@ const CountDownSection = () => {
 					</div>
 
 					<div
-						className={`flex flex-col transition-all duration-1000 delay-250 ${
+						className={`flex flex-col items-center transition-all duration-1000 delay-250 ${
 							isVisibleRefAkad ? "opacity-100" : "translate-x-full opacity-0"
 						}`}
 					>
@@ -153,19 +153,19 @@ const CountDownSection = () => {
 							Gg. Balai Rakyat No.5, RT.5/RW.5, Balekambang, Kec. Kramat jati, Kota Jakarta Timur,
 							Daerah Khusus Ibukota Jakarta 13530, Indonesia
 						</span>
+
+						<Button
+							className={`bg-white text-neutral-900 mt-2 max-w-max ${futura.className} tracking-wide rounded-lg text-[0.875em] font-semibold`}
+							icon={"/icons/location.svg"}
+							onClick={() => window.open("https://maps.app.goo.gl/sopPHMzTjRk9tL2u9", "_blank")}
+						>
+							View Location
+						</Button>
 					</div>
 
-					<Button
-						className={`bg-white text-neutral-900 ${futura.className} tracking-wide rounded-lg text-[0.875em] font-semibold`}
-						icon={"/icons/location.svg"}
-						onClick={() => window.open("https://maps.app.goo.gl/sopPHMzTjRk9tL2u9", "_blank")}
-					>
-						View Location
-					</Button>
-
 					<div
-						className={`flex flex-col transition-all duration-1000 mt-10 ${
-							isVisibleRefResepsi ? "opacity-100 delay-500" : "translate-y-full opacity-0"
+						className={`flex flex-col items-center transition-all duration-1000 mt-10 ${
+							isVisibleRefResepsi ? "opacity-100 delay-500" : "-translate-x-full opacity-0"
 						}`}
 						ref={refResepsi}
 					>
@@ -191,15 +191,15 @@ const CountDownSection = () => {
 							Gg. Balai Rakyat No.5, RT.5/RW.5, Balekambang, Kec. Kramat jati, Kota Jakarta Timur,
 							Daerah Khusus Ibukota Jakarta 13530, Indonesia
 						</span>
-					</div>
 
-					<Button
-						className={`bg-white text-neutral-900 ${futura.className} tracking-wide rounded-lg text-[0.875em] font-semibold`}
-						icon={"/icons/location.svg"}
-						onClick={() => window.open("https://maps.app.goo.gl/sopPHMzTjRk9tL2u9", "_blank")}
-					>
-						View Location
-					</Button>
+						<Button
+							className={`bg-white text-neutral-900 mt-2 max-w-max ${futura.className} tracking-wide rounded-lg text-[0.875em] font-semibold`}
+							icon={"/icons/location.svg"}
+							onClick={() => window.open("https://maps.app.goo.gl/sopPHMzTjRk9tL2u9", "_blank")}
+						>
+							View Location
+						</Button>
+					</div>
 				</div>
 			</div>
 		</ImageCarousel>

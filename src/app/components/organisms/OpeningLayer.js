@@ -4,8 +4,12 @@ import { useState, useEffect } from "react";
 import Button from "../atoms/Button";
 import AnimatedText from "../molecules/AnimatedText";
 import { greatVibes, luxiaDisplay } from "../../utils/customFonts";
+import { useSearchParams } from "next/navigation";
 
 const OpeningLayer = ({ onClose, isOpened }) => {
+	const searchParams = useSearchParams();
+	const name = searchParams.get("u");
+
 	const [showElements, setShowElements] = useState({
 		greeting: false,
 		invite: false,
@@ -42,7 +46,7 @@ const OpeningLayer = ({ onClose, isOpened }) => {
 		>
 			<div className="w-full h-1/2 flex flex-col items-center justify-center gap-1 mt-18 py-4 transition-all">
 				<AnimatedText
-					text="Dear Invistory,"
+					text={`Dear ${name || ""},`}
 					className="text-[1.125em] font-roboto tracking-wider text-white/70 delay-50"
 					show={showElements.greeting}
 				/>

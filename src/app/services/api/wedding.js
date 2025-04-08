@@ -10,6 +10,7 @@ export const postAttendance = async (data) => {
 
 		if (!response.ok) {
 			const errorData = await response.json().catch(() => ({}));
+			console.log("🚀 ~ postAttendance ~ errorData:", errorData);
 			throw new Error(errorData.message || "Failed to submit attendance data");
 		}
 
