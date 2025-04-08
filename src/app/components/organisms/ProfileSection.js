@@ -94,7 +94,7 @@ const ProfileSection = () => {
 				}
 				instagramLink="https://www.instagram.com/anggrndhsr"
 				imageSrc="/images/profile3.png"
-				className={`transition-all duration-2000 md:-mt-80 ${
+				className={`transition-all duration-2000 lg:-mt-44 ${
 					isVisibleRefProfileWoman ? "opacity-100" : "translate-y-full opacity-0"
 				}`}
 				ref={refProfileWoman}
