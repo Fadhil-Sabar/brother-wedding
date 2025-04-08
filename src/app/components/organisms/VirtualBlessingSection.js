@@ -1,8 +1,8 @@
 import { futura, luxiaDisplay } from "@/app/utils/customFonts";
 import Button from "../atoms/Button";
 import { useState } from "react";
-import Image from "next/image";
 import { useEffect } from "react";
+import Bank from "../molecules/Bank";
 
 const VirtualBlessingSection = () => {
 	const [isOpenModal, setIsOpenModal] = useState(false);
@@ -50,35 +50,13 @@ const VirtualBlessingSection = () => {
 				}`}
 				onClick={() => setIsOpenModal(false)}
 			>
-				<div className="flex flex-col items-center justify-center bg-neutral-800 m-3 w-full h-6/12 rounded-lg">
+				<div className="flex flex-col items-center justify-center bg-neutral-800 m-3 w-full py-5 rounded-lg">
 					<span className={`${luxiaDisplay.className} text-[2.1875em] font-[1100]`}>
 						Virtual Blessing
 					</span>
 
-					<div className="flex flex-col items-center">
-						<Image
-							src="/images/bank1.png"
-							alt="Bank 1"
-							width={200}
-							height={10}
-							priority
-							onClick={() => {}}
-						/>
-
-						<span className={`${futura.className} font-bold text-[1em]`}>a/n Ivan Darmawan</span>
-						<span className={`${futura.className} font-bold text-[1em]`}>067912731</span>
-
-						<Button
-							className={`bg-white text-neutral-900 ${futura.className} tracking-wide rounded-lg text-[0.875em] font-semibold mt-3 transition-colors active:bg-white/50`}
-							icon={"/icons/copy.svg"}
-							onClick={(e) => {
-								navigator.clipboard.writeText("067912731");
-								e.stopPropagation();
-							}}
-						>
-							Copy Number
-						</Button>
-					</div>
+					<Bank accountName={"Anggraini Nur Indahsari"} accountNumber={"6281833461"} />
+					<Bank accountName={"Ivan Darmawan"} accountNumber={"067912731"} />
 				</div>
 			</div>
 		</>
