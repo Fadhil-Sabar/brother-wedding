@@ -157,7 +157,7 @@ const AttendanceSection = () => {
 						placeholder="Nama"
 						className="border px-3 py-2 rounded bg-white"
 						name="name"
-						value={name}
+						value={name || ""}
 						disabled
 					/>
 					<textarea

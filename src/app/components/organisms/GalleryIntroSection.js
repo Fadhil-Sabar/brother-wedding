@@ -9,8 +9,8 @@ import { useRef } from "react";
 
 const GalleryIntroSection = () => {
 	const carouselImages = [
-		"/images/carousel1.jpg",
-		// "/images/carousel2.jpg",
+		// "/images/carousel1.jpg",
+		"/images/carousel2.jpg",
 		// Add more images as needed
 	];
 

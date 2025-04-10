@@ -150,8 +150,11 @@ const CountDownSection = () => {
 						</span>
 
 						<span className={`${futura.className} text-[0.875em] tracking-wider`}>
-							Gg. Balai Rakyat No.5, RT.5/RW.5, Balekambang, Kec. Kramat jati, Kota Jakarta Timur,
-							Daerah Khusus Ibukota Jakarta 13530, Indonesia
+							Gg. Balai Rakyat No.5, RT.5/RW.5, <br />
+							Balekambang, Kec. Kramat jati, <br />
+							Kota Jakarta Timur, <br />
+							Daerah Khusus Ibukota Jakarta, <br />
+							13530, Indonesia
 						</span>
 
 						<Button
@@ -188,8 +191,11 @@ const CountDownSection = () => {
 						</span>
 
 						<span className={`${futura.className} text-[0.875em] tracking-wider`}>
-							Gg. Balai Rakyat No.5, RT.5/RW.5, Balekambang, Kec. Kramat jati, Kota Jakarta Timur,
-							Daerah Khusus Ibukota Jakarta 13530, Indonesia
+							Gg. Balai Rakyat No.5, RT.5/RW.5, <br />
+							Balekambang, Kec. Kramat jati, <br />
+							Kota Jakarta Timur, <br />
+							Daerah Khusus Ibukota Jakarta, <br />
+							13530, Indonesia
 						</span>
 
 						<Button
