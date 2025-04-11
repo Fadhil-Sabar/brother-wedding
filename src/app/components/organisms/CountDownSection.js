@@ -4,6 +4,7 @@ import ImageCarousel from "../molecules/ImageCarousel";
 import Button from "../atoms/Button";
 import Image from "next/image";
 import useIsVisible from "@/app/utils/useIsVisible";
+import { generateGoogleCalendarUrl } from "@/app/utils/calendar";
 
 const weddingDate = new Date("11:00 April 27, 2025");
 const dayString = weddingDate.toLocaleString("en-US", { weekday: "long" });
@@ -64,7 +65,7 @@ const CountDownSection = () => {
 
 	return (
 		<ImageCarousel images={carouselImages}>
-			<div className="flex flex-col justify-center items-center text-[16px] gap-6 pb-10 ">
+			<div className="flex flex-col justify-center items-center text-[16px] gap-6 pb-10 text-white">
 				<span
 					className={`${
 						bradHefferson.className
@@ -116,6 +117,18 @@ const CountDownSection = () => {
 						isVisibleRefLeading ? "opacity-100" : "opacity-0"
 					}`}
 					icon={"/icons/calendar.svg"}
+					onClick={() => {
+						const calendarUrl = generateGoogleCalendarUrl({
+							title: "Wedding Celebration of Ivan & Anggi",
+							startDateTime: weddingDate,
+							endDateTime: new Date(weddingDate.getTime() + 3 * 60 * 60 * 1000), // 5 hours later
+							location: "https://maps.app.goo.gl/sopPHMzTjRk9tL2u9",
+							description:
+								"Join us for the wedding celebration of Ivan & Anggi. We look forward to celebrating with you!",
+						});
+
+						window.open(calendarUrl, "_blank");
+					}}
 				>
 					Add to Calendar
 				</Button>

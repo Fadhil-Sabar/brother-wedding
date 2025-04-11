@@ -53,7 +53,7 @@ const OpeningLayer = ({ onClose, isOpened }) => {
 				<AnimatedText
 					text="You're invited!"
 					fontClass={luxiaDisplay.className}
-					className="text-[1.75em] delay-150"
+					className="text-[1.75em] text-white delay-150"
 					show={showElements.invite}
 				/>
 				<AnimatedText
@@ -64,7 +64,7 @@ const OpeningLayer = ({ onClose, isOpened }) => {
 				<AnimatedText
 					text="Ivan & Anggi"
 					fontClass={greatVibes.className}
-					className="text-[2.5em] tracking-wider delay-1000"
+					className="text-[2.5em] text-white tracking-wider delay-1000"
 					show={showElements.names}
 				/>
 			</div>
