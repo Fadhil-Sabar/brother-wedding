@@ -30,7 +30,7 @@ const VirtualBlessingSection = () => {
 					Virtual Blessing
 				</span>
 
-				<p className={`${futura.className} mt-4 mb-6 text-[0.875em] tracking-wider`}>
+				<p className={`${futura.className} mt-4 mb-6 max-w-2xl text-[0.875em] tracking-wider`}>
 					Semoga keterbatasan ini tidak mengurangi kebahagiaan kami berdua dan tidak menghilangkan
 					keberkahan dari kalian semua. Doa dari kalian untuk pernikahan kami adalah anugerah
 					terindah dari Tuhan Yang Maha Esa.
