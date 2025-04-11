@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 import { QueryClient, QueryClientProvider, useMutation, useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { postAttendance } from "@/app/services/api/wedding";
+import { postAttendance } from "@/services/api/wedding";
 import { useSearchParams } from "next/navigation";
 import Wish from "../atoms/Wish";
 

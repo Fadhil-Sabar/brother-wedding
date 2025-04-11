@@ -14,6 +14,7 @@ const geistMono = Geist_Mono({
 export const metadata = {
 	title: "Ivan & Anggi Wedding",
 	description: "The Wedding of Ivan & Anggi",
+	metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3001"),
 	icons: {
 		icon: "/favicon.ico",
 		shortcut: "/favicon.ico",
@@ -22,7 +23,7 @@ export const metadata = {
 	openGraph: {
 		title: "Ivan & Anggi Wedding",
 		description: "The Wedding of Ivan & Anggi",
-		url: "https://brother-wedding.vercel.app",
+		url: "https://ivan-anggi-wedding.vercel.app",
 		siteName: "Ivan & Anggi Wedding",
 		images: [
 			{
@@ -39,7 +40,6 @@ export const metadata = {
 		statusBarStyle: "default",
 	},
 	manifest: "/manifest.json",
-	viewport: "width=device-width, initial-scale=1.0",
 	robots: {
 		index: true,
 		follow: true,
