@@ -31,8 +31,9 @@ const VirtualBlessingSection = () => {
 				</span>
 
 				<p className={`${futura.className} mt-4 mb-6 text-[0.875em] tracking-wider`}>
-					Hopefully this limitation does not reduce happiness for both of us and does not eliminate
-					the blessings from all of you. Your prayer for our marriage is the greatest gift of all.
+					Semoga keterbatasan ini tidak mengurangi kebahagiaan kami berdua dan tidak menghilangkan
+					keberkahan dari kalian semua. Doa dari kalian untuk pernikahan kami adalah anugerah
+					terindah dari Tuhan Yang Maha Esa.
 				</p>
 
 				<Button

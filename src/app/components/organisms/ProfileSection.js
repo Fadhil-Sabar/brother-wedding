@@ -33,9 +33,9 @@ const ProfileSection = () => {
 					/>
 				</div>
 
-				<div className={`mt-20 p-5 flex items-end ${futura.className}`}>
+				<div className={`mt-20 p-5 flex items-center justify-center ${futura.className}`}>
 					<span
-						className={`text-gray-700 text-right tracking-wider font-bold text-[0.9735em] 
+						className={`text-gray-700 text-center max-w-2xl tracking-wider font-bold text-[0.9735em] 
 						transition-all duration-2000 ${
 							isVisibleRefWord ? "opacity-100 delay-250" : "-translate-y-full opacity-0"
 						}`}
@@ -54,7 +54,7 @@ const ProfileSection = () => {
 						height={120}
 						priority
 						className={`rounded-2xl drop-shadow-2xl bg-cover transition-all duration-2000 ${
-							isVisibleRefProfile1 ? "opacity-100 delay-500" : "-translate-y-full opacity-0"
+							isVisibleRefProfile1 ? "opacity-100 delay-250" : " opacity-0"
 						}`}
 						ref={refProfile1}
 					/>
@@ -62,7 +62,7 @@ const ProfileSection = () => {
 
 				<div className={`mt-20 p-5 flex items-end ${futura.className}`}>
 					<span
-						className={`text-gray-700 text-center tracking-wider font-bold text-[0.9735em] 
+						className={`text-gray-700 text-center max-w-2xl tracking-wider font-bold text-[0.9735em] 
 						transition-all duration-2000 ${
 							isVisibleRefWord ? "opacity-100 delay-250" : "-translate-y-full opacity-0"
 						}`}
@@ -92,13 +92,13 @@ const ProfileSection = () => {
 				shortName="Anggi"
 				parentName={
 					<>
-						Putri Kedua dari <br /> Bpk. Ahmad Junaedi & <br /> Ibu Rina Lisnengsih
+						Putri Kedua dari <br /> Bpk. Ahmad Junaidi & <br /> Ibu Rina Lisnengsih
 					</>
 				}
 				instagramLink="https://www.instagram.com/anggrndhsr"
 				imageSrc="/images/profile3.png"
-				className={`transition-all duration-2000 lg:-mt-44 ${
-					isVisibleRefProfileWoman ? "opacity-100" : "translate-y-full opacity-0"
+				className={`transition-all duration-2000 ${
+					isVisibleRefProfileWoman ? "opacity-100" : "translate-x-full opacity-0"
 				}`}
 				ref={refProfileWoman}
 			/>
@@ -114,7 +114,7 @@ const ProfileSection = () => {
 				instagramLink="https://www.instagram.com/nakagawa_iruka"
 				imageSrc="/images/profile2.png"
 				className={`transition-all duration-2000 ${
-					isVisibleRefProfileMan ? "opacity-100" : "translate-y-full opacity-0"
+					isVisibleRefProfileMan ? "opacity-100" : "-translate-x-full opacity-0"
 				}`}
 				ref={refProfileMan}
 			/>
