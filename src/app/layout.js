@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 export const metadata = {
 	title: "Ivan & Anggi Wedding",
 	description: "The Wedding of Ivan & Anggi",
-	metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3001"),
+	// metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3001"),
 	icons: {
 		icon: "/favicon.ico",
 		shortcut: "/favicon.ico",
