@@ -21,7 +21,7 @@ const ProfileSection = () => {
 	const isVisibleRefProfileMan = useIsVisible(refProfileMan);
 
 	return (
-		<div className="flex flex-col items-center min-h-screen bg-white p-5">
+		<div className="flex flex-col items-center min-h-screen bg-white p-5 overflow-x-hidden">
 			<div className="min-h-svh">
 				<div className="flex justify-center">
 					<Image
