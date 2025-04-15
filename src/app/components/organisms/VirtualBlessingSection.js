@@ -27,7 +27,7 @@ const VirtualBlessingSection = () => {
 		<>
 			<div className="w-full h-[400px] flex flex-col items-center bg-neutral-900 text-white justify-center text-center text-[16px] px-8">
 				<span className={`${luxiaDisplay.className} text-[2.1875em] font-[1200]`}>
-					Virtual Blessing
+					Wedding Gift
 				</span>
 
 				<p className={`${futura.className} mt-4 mb-6 max-w-2xl text-[0.875em] tracking-wider`}>
@@ -53,11 +53,22 @@ const VirtualBlessingSection = () => {
 			>
 				<div className="flex flex-col items-center justify-center max-w-5xl bg-neutral-800 text-white m-3 w-full py-5 rounded-lg">
 					<span className={`${luxiaDisplay.className} text-[2.1875em] font-[1100]`}>
-						Virtual Blessing
+						Wedding Gift
 					</span>
 
 					<Bank accountName={"Anggraini Nur Indahsari"} accountNumber={"6281833461"} />
 					<Bank accountName={"Ivan Darmawan"} accountNumber={"067912731"} />
+
+					<div className="flex flex-col items-center text-center px-8 mt-4 gap-3">
+						<label className={`${futura.className} max-w-2xl text-[0.875em] tracking-wider`}>
+							KIRIM HADIAH FISIK
+						</label>
+						<div className="border-b border-neutral-300 w-full"></div>
+						<span className={`${futura.className} max-w-2xl text-[0.875em] tracking-wider`}>
+							Jl. Cendrawasih VII No.107 RT.04/003, Kelurahan Sawah Baru, Kecamatan Ciputat,
+							Tangerang Selatan, Banten. Kode pos 15413
+						</span>
+					</div>
 				</div>
 			</div>
 		</>

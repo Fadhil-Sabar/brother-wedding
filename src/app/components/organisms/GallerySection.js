@@ -1,12 +1,14 @@
 import { luxiaDisplay } from "@/app/utils/customFonts";
 import Image from "next/image";
-import { useState, useRef } from "react";
+import { useState, useRef, useMemo } from "react";
 import useIsVisible from "@/app/utils/useIsVisible";
+import Button from "../atoms/Button";
 
 const GallerySection = () => {
 	const [selectedImage, setSelectedImage] = useState(null);
 	const refImage = useRef(null);
 	const isVisibleRefImage = useIsVisible(refImage);
+	const [isExpanded, setIsExpanded] = useState(false);
 
 	const galleryData = [
 		{ id: 1, src: "/images/gallery1.jpg", alt: "Wedding photo 1", aspectRatio: "portrait" },
@@ -18,15 +20,27 @@ const GallerySection = () => {
 		{ id: 7, src: "/images/gallery7.jpg", alt: "Wedding photo 7", aspectRatio: "landscape" },
 		{ id: 8, src: "/images/gallery8.jpg", alt: "Wedding photo 8", aspectRatio: "landscape" },
 		{ id: 9, src: "/images/gallery9.jpg", alt: "Wedding photo 9", aspectRatio: "landscape" },
+		{ id: 10, src: "/images/gallery10.jpg", alt: "Wedding photo 10", aspectRatio: "potrait" },
+		{ id: 11, src: "/images/gallery11.jpg", alt: "Wedding photo 11", aspectRatio: "potrait" },
+		{ id: 12, src: "/images/gallery12.jpg", alt: "Wedding photo 12", aspectRatio: "potrait" },
+		{ id: 13, src: "/images/gallery13.jpg", alt: "Wedding photo 13", aspectRatio: "potrait" },
+		{ id: 14, src: "/images/gallery14.jpg", alt: "Wedding photo 14", aspectRatio: "potrait" },
 		// Add all your gallery images here
 	];
+
+	const isMany = useMemo(() => {
+		return galleryData.length > 10;
+	}, [galleryData.length]);
 
 	return (
 		<div className="flex flex-col items-center text-center text-[16px] w-full min-h-[80svh] bg-neutral-50 py-12 px-4 md:px-8">
 			<h2 className={`${luxiaDisplay.className} text-[2.125em] text-neutral-900 mb-8`}>Gallery</h2>
 
 			<div
-				className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 w-full max-w-6xl auto-rows-[minmax(150px,auto)]"
+				className={`relative ${
+					!isExpanded ? "overflow-y-hidden max-h-[80vh]" : "h-auto pb-10"
+				} grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 w-full max-w-6xl auto-rows-[minmax(150px,auto)]
+					`}
 				ref={refImage}
 			>
 				{galleryData.map((image) => (
@@ -54,6 +68,19 @@ const GallerySection = () => {
 						/>
 					</div>
 				))}
+
+				<div
+					className={`absolute right-0 left-0 flex items-center justify-center
+						${isExpanded ? "-bottom-5" : "bottom-0 bg-gradient-to-t from-neutral-50 to-transparent h-20"}
+					`}
+				>
+					<Button
+						className={`bg-neutral-900 text-white px-6 py-2 rounded-full text-[0.875em] font-semibold tracking-wide shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl active:scale-95 active:shadow-md`}
+						onClick={() => setIsExpanded(!isExpanded)}
+					>
+						{isExpanded ? "Show Less" : "Show More"}
+					</Button>
+				</div>
 			</div>
 
 			{/* Image modal */}

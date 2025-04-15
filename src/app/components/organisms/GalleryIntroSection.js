@@ -21,7 +21,7 @@ const GalleryIntroSection = () => {
 		<ImageCarousel images={carouselImages}>
 			<MusicControl />
 
-			<div className="text-white text-center mb-40 h-60 px-4 flex flex-col" ref={refGallery}>
+			<div className="text-white text-center my-60 h-60 px-4 flex flex-col" ref={refGallery}>
 				<span
 					className={`${bradHefferson.className} text-[3em] transition-all duration-1000 ${
 						isVisibleRefGallery ? "opacity-100 delay-500" : "-translate-y-full opacity-0"
