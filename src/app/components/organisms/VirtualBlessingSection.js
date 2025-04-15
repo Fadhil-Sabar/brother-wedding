@@ -57,7 +57,7 @@ const VirtualBlessingSection = () => {
 					</span>
 
 					<Bank accountName={"Anggraini Nur Indahsari"} accountNumber={"6281833461"} />
-					<Bank accountName={"Ivan Darmawan"} accountNumber={"067912731"} />
+					<Bank accountName={"Ivan Darmawan"} accountNumber={"0670555135"} />
 
 					<div className="flex flex-col items-center text-center px-8 mt-4 gap-3">
 						<label className={`${futura.className} max-w-2xl text-[0.875em] tracking-wider`}>
