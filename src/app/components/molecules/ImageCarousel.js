@@ -23,7 +23,7 @@ const ImageCarousel = ({ images, interval = 4000, children }) => {
 	return (
 		<>
 			<div
-				className="relative flex flex-col justify-between min-h-screen py-2 text-[16px] bg-cover bg-center transition-all ease-in-out duration-3000 bg-black/50 bg-blend-multiply"
+				className="flex flex-col justify-between min-h-screen py-2 text-[16px] bg-cover bg-center transition-all ease-in-out duration-3000 bg-black/50 bg-blend-multiply"
 				style={{ backgroundImage: `url(${images[currentImageIndex]})` }}
 			>
 				{children}

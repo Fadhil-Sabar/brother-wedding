@@ -21,7 +21,7 @@ const ProfileSection = () => {
 	const isVisibleRefProfileMan = useIsVisible(refProfileMan);
 
 	return (
-		<div className="flex flex-col items-center min-h-screen bg-white p-5 overflow-x-hidden">
+		<div className="flex flex-col items-center min-h-screen bg-white p-5 overflow-x-hidden overflow-y-hidden">
 			<div className="min-h-svh">
 				<div className="flex justify-center">
 					<Image
@@ -35,14 +35,17 @@ const ProfileSection = () => {
 
 				<div className={`mt-20 p-5 flex items-center justify-center ${futura.className}`}>
 					<span
-						className={`text-gray-700 text-center max-w-2xl tracking-wider font-bold text-[0.9735em] 
+						className={`text-gray-700 text-center max-w-2xl tracking-wider font-bold text-[0.9735em]
 						transition-all duration-2000 ${
-							isVisibleRefWord ? "opacity-100 delay-250" : "-translate-y-full opacity-0"
+							isVisibleRefWord ? "opacity-100 delay-250" : "-translate-x-50 opacity-0"
 						}`}
 						ref={refWord}
 					>
-						"In all the world, there is no heart for me like yours. In all the world, there is no
-						love for you like mine." — Maya Angelou
+						"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari
+						jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya
+						di antaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar
+						terdapat tanda-tanda bagi kaum yang berpikir." <br />
+						(QS. Ar-Rum: 21)
 					</span>
 				</div>
 
@@ -62,17 +65,11 @@ const ProfileSection = () => {
 
 				<div className={`mt-20 p-5 flex items-end ${futura.className}`}>
 					<span
-						className={`text-gray-700 text-center max-w-2xl tracking-wider font-bold text-[0.9735em] 
-						transition-all duration-2000 ${
-							isVisibleRefWord ? "opacity-100 delay-250" : "-translate-y-full opacity-0"
-						}`}
-						ref={refWord}
+						className={`text-gray-700 text-center max-w-2xl tracking-wider font-bold text-[0.9735em]
+						transition-all duration-2000 ${isVisibleRefWord ? "opacity-100 delay-250" : "translate-x-full opacity-0"}`}
 					>
-						"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari
-						jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya
-						di antaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar
-						terdapat tanda-tanda bagi kaum yang berpikir." <br />
-						(QS. Ar-Rum: 21)
+						Assalamualaikum Wr. Wb. Dengan memohon Rahmat & Ridho Allah SWT, kami bermaksud
+						mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara pernikahan kami:
 					</span>
 				</div>
 
@@ -98,7 +95,7 @@ const ProfileSection = () => {
 				instagramLink="https://www.instagram.com/anggrndhsr"
 				imageSrc="/images/profile3.png"
 				className={`transition-all duration-2000 ${
-					isVisibleRefProfileWoman ? "opacity-100" : "translate-x-full opacity-0"
+					isVisibleRefProfileWoman ? "opacity-100" : "translate-x-50 opacity-0"
 				}`}
 				ref={refProfileWoman}
 			/>
@@ -114,7 +111,7 @@ const ProfileSection = () => {
 				instagramLink="https://www.instagram.com/nakagawa_iruka"
 				imageSrc="/images/profile2.png"
 				className={`transition-all duration-2000 ${
-					isVisibleRefProfileMan ? "opacity-100" : "-translate-x-full opacity-0"
+					isVisibleRefProfileMan ? "opacity-100" : "-translate-x-50 opacity-0"
 				}`}
 				ref={refProfileMan}
 			/>
