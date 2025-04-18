@@ -48,7 +48,7 @@ const ProfileInfo = ({
 				width={40}
 				height={40}
 				priority
-				className="rounded-full mt-5"
+				className="rounded-full mt-5 cursor-pointer hover:scale-110 transition-transform"
 				onClick={() => window.open(instagramLink, "_blank")}
 			/>
 		</div>

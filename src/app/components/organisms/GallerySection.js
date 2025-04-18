@@ -91,12 +91,12 @@ const GallerySection = () => {
 				onClick={() => setSelectedImage(null)}
 			>
 				<div className="relative max-w-4xl max-h-[90vh]" onClick={(e) => e.stopPropagation()}>
-					<button
+					<Button
 						className="absolute top-4 right-2 bg-black/15 text-white w-10 h-10 rounded-full flex items-center justify-center"
 						onClick={() => setSelectedImage(null)}
 					>
 						&times;
-					</button>
+					</Button>
 					{selectedImage && (
 						<Image
 							src={galleryData.find((img) => img.id === selectedImage)?.src}
@@ -107,18 +107,18 @@ const GallerySection = () => {
 						/>
 					)}
 
-					<button
+					<Button
 						className="absolute top-1/2 left-2 bg-black/15 text-white w-10 h-10 rounded-full flex items-center justify-center"
 						onClick={() => setSelectedImage((prev) => (prev > 1 ? prev - 1 : galleryData.length))}
 					>
 						&lt;
-					</button>
-					<button
+					</Button>
+					<Button
 						className="absolute top-1/2 right-2 bg-black/15 text-white w-10 h-10 rounded-full flex items-center justify-center"
 						onClick={() => setSelectedImage((prev) => (prev < galleryData.length ? prev + 1 : 1))}
 					>
 						&gt;
-					</button>
+					</Button>
 				</div>
 			</div>
 		</div>

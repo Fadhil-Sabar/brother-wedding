@@ -6,6 +6,7 @@ import axios from "axios";
 import { postAttendance } from "@/services/api/wedding";
 import { useSearchParams } from "next/navigation";
 import Wish from "../atoms/Wish";
+import Button from "../atoms/Button";
 
 const SubmitStatus = ({ isLoading, isSuccess, isError, error }) => {
 	return (
@@ -181,13 +182,13 @@ const AttendanceSection = () => {
 					</select>
 
 					<div className="flex justify-end">
-						<button
+						<Button
 							className="bg-white px-3 py-2 rounded mt-4 w-20"
 							onClick={handleSubmit}
 							disabled={mutationSubmit.isLoading}
 						>
 							Kirim
-						</button>
+						</Button>
 					</div>
 				</div>
 			</div>
