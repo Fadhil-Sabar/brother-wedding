@@ -130,7 +130,7 @@ const AttendanceSection = () => {
 			</div>
 			<span className={`text-[1.75em] text-center mb-4 ${luxiaDisplay.className}`}>RSVP</span>
 
-			<div className="bg-linear-to-b max-w-2xl min-w-full md:min-w-2xl from-neutral-600 to-neutral-700 rounded-t-4xl">
+			<div className="bg-linear-to-b max-w-2xl min-w-full md:min-w-2xl from-neutral-600 to-neutral-700 rounded-4xl mb-5">
 				<div className={`flex flex-col h-[65svh] pt-8 p-5 font-roboto gap-2`}>
 					<div
 						className={`flex flex-col snap-y h-full gap-3 overflow-y-auto transition-all duration-500`}
